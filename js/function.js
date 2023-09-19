@@ -8,7 +8,7 @@ function addNumber(event){
   const clickedButtonValue = event.target.getAttribute("data-value");
 
   const operations = ["+", "-", "*", "/", "."];
-  const specificWords = ["equal", "clear"];
+  const specificWords = ["equal", "clear", "delete"];
 
   // Clear functionality
   if(clickedButtonValue == "clear"){
@@ -31,5 +31,9 @@ function addNumber(event){
   // Equal functionality
   if(clickedButtonValue == "equal" && input.value != "" && notEqual == false){
       input.value = eval(input.value);
+  }
+
+  if(clickedButtonValue == "delete"){
+    input.value = input.value.slice(0, -1);
   }
 }
