@@ -10,7 +10,7 @@ function addNumber(event){
   const operations = ["+", "-", "*", "/", "."];
   const specificWords = ["equal", "clear"];
 
-  // Clear
+  // Clear functionality
   if(clickedButtonValue == "clear"){
     input.value = "";
   }
@@ -28,7 +28,7 @@ function addNumber(event){
   }
    
   
-  // Si el valor es una operación entonces hace la operación
+  // Equal functionality
   if(clickedButtonValue == "equal" && input.value != "" && notEqual == false){
       input.value = eval(input.value);
   }
