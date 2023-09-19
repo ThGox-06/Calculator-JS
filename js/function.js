@@ -1,26 +1,35 @@
-// Función para manejar los clics en los botones
-function addNumber(event) {
-  // Obtiene el elemento de entrada
+let isOperation = false;
+let notEqual = false;
+
+function addNumber(event){
+  // Get input
   let input = document.getElementById("myInput");
 
-  // Obtiene el valor numérico del botón clickeado o el operador
   const clickedButtonValue = event.target.getAttribute("data-value");
 
-  if (clickedButtonValue !== null) {
-    // Si el botón clickeado tiene un valor válido, lo agrega al campo de entrada
+  const operations = ["+", "-", "*", "/", "."];
+  const specificWords = ["equal", "clear"];
+
+  // Clear
+  if(clickedButtonValue == "clear"){
+    input.value = "";
+  }
+  
+  // This sends the operations separately, but if the operations are together, it does not work
+  if(operations.includes(clickedButtonValue) && isOperation == false){
     input.value += clickedButtonValue;
-  } else {
-    // Si no tiene un valor válido, borra el campo de entrada
-    input.value = null;
+    isOperation = true;
+    notEqual = true;
+  // This sends the numbers
+  } else if(!specificWords.includes(clickedButtonValue) && !operations.includes(clickedButtonValue)){
+    input.value += clickedButtonValue;
+    isOperation = false;
+    notEqual = false;
+  }
+   
+  
+  // Si el valor es una operación entonces hace la operación
+  if(clickedButtonValue == "equal" && input.value != "" && notEqual == false){
+      input.value = eval(input.value);
   }
 }
-
-// Configura los botones para que utilicen la función addNumber
-document.getElementById("button1").addEventListener("click", addNumber);
-document.getElementById("button2").addEventListener("click", addNumber);
-document.getElementById("plusButton").addEventListener("click", addNumber);
-
-// Configura el botón "Clear" para que borre el campo de entrada
-document.getElementById("clearButton").addEventListener("click", function () {
-  document.getElementById("myInput").value = "";
-});

@@ -8,10 +8,12 @@
 <body>
   <script src="js/function.js"></script>
   <input type="text" placeholder="0" readonly id="myInput">
-  <button type="button" onclick="addNumber(event)" id="button1">1</button>
-  <button type="button" onclick="addNumber(event)" id="button2">2</button>
-  <button type="button" onclick="addNumber(event)" id="plusButton">+</button>
-  <button type="button" onclick="addNumber(event)" id="clearButton">Clear</button>
+  <button type="button" onclick="addNumber(event)" id="button1" data-value="1">1</button>
+  <button type="button" onclick="addNumber(event)" id="button2" data-value="2">2</button>
+  <!-- <button type="button" onclick="addNumber(event)" id="button3" data-value="3">3</button> -->
+  <button type="button" onclick="addNumber(event)" id="plusButton" data-value="+">+</button>
+  <button type="button" onclick="addNumber(event)" id="clearButton" data-value="clear">Clear</button>
+  <button type="button" onclick="addNumber(event)" id="equalButton" data-value="equal">=</button>
   <!-- <button type="button">3</button>
   <button type="button">4</button>
   <button type="button">5</button>
@@ -20,7 +22,6 @@
   <button type="button">8</button>
   <button type="button">9</button>
   <button type="button">0</button>
-  <button type="button">=</button>
   <button type="button">-</button>
   <button type="button">*</button>
   <button type="button">/</button>
