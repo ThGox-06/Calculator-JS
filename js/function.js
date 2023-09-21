@@ -33,6 +33,7 @@ function addNumber(event){
       input.value = eval(input.value);
   }
 
+  // Delete functionality
   if(clickedButtonValue == "delete"){
     input.value = input.value.slice(0, -1);
   }
