@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -12,37 +13,42 @@
   <script src="js/function.js"></script>
   <!-- Input -->
   <input type="text" placeholder="0" readonly id="myInput">
-  <!-- Numbers -->
-  <div id="numbersBox">
-    <div id="box3">
-      <button type="button" onclick="addNumber(event)" id="button7" data-value="7">7</button>
-      <button type="button" onclick="addNumber(event)" id="button8" data-value="8">8</button>
-      <button type="button" onclick="addNumber(event)" id="button9" data-value="9">9</button>
-    </div>
-    <div id="box2">
-      <button type="button" onclick="addNumber(event)" id="button4" data-value="4">4</button>
-      <button type="button" onclick="addNumber(event)" id="button5" data-value="5">5</button>
-      <button type="button" onclick="addNumber(event)" id="button6" data-value="6">6</button>
-    </div>
-    <div id="box1">
-      <button type="button" onclick="addNumber(event)" id="button1" data-value="1">1</button>
-      <button type="button" onclick="addNumber(event)" id="button2" data-value="2">2</button>
-      <button type="button" onclick="addNumber(event)" id="button3" data-value="3">3</button>
-      <button type="button" onclick="addNumber(event)" id="button0" data-value="0">0</button>
-    </div>
-  </div>
-  <!-- Operations -->
-  <div id="operationsBox">
-    <button type="button" onclick="addNumber(event)" id="divisionButton" data-value="/">/</button>
-    <button type="button" onclick="addNumber(event)" id="multiplyButton" data-value="*">*</button>
-    <button type="button" onclick="addNumber(event)" id="subtractionButton" data-value="-">-</button>
-    <button type="button" onclick="addNumber(event)" id="plusButton" data-value="+">+</button>
-  </div>
-  <!-- Special buttons -->
-  <button type="button" onclick="addNumber(event)" id="backspaceButton" data-value="delete"><-</button>
+  <!-- Calculator buttons -->
+  <div id="calculator">
+    <!-- First row -->
+    <div class="row">
       <button type="button" onclick="addNumber(event)" id="clearButton" data-value="clear">C</button>
+      <button type="button" onclick="addNumber(event)" id="backspaceButton" data-value="delete"><-</button>
+      <button type="button" onclick="addNumber(event)" class="operation-button" data-value="/">/</button>
+    </div>
+    <!-- Second row -->
+    <div class="row">
+      <button type="button" onclick="addNumber(event)" data-value="7">7</button>
+      <button type="button" onclick="addNumber(event)" data-value="8">8</button>
+      <button type="button" onclick="addNumber(event)" data-value="9">9</button>
+      <button type="button" onclick="addNumber(event)" data-value="*">*</button>
+    </div>
+    <!-- Third row -->
+    <div class="row">
+      <button type="button" onclick="addNumber(event)" data-value="4">4</button>
+      <button type="button" onclick="addNumber(event)" data-value="5">5</button>
+      <button type="button" onclick="addNumber(event)" data-value="6">6</button>
+      <button type="button" onclick="addNumber(event)" data-value="-">-</button>
+    </div>
+    <!-- Fourth row -->
+    <div class="row">
+      <button type="button" onclick="addNumber(event)" data-value="1">1</button>
+      <button type="button" onclick="addNumber(event)" data-value="2">2</button>
+      <button type="button" onclick="addNumber(event)" data-value="3">3</button>
+      <button type="button" onclick="addNumber(event)" id="plusButton" data-value="+">+</button>
+    </div>
+    <!-- Fifth row -->
+    <div class="row">
+      <button type="button" onclick="addNumber(event)" data-value="0">0</button>
+      <button type="button" onclick="addNumber(event)" data-value=".">.</button>
       <button type="button" onclick="addNumber(event)" id="equalButton" data-value="equal">=</button>
-      <button type="button" onclick="addNumber(event)" id="dotButton" data-value=".">.</button>
+    </div>
+  </div>
 </body>
 
 </html>
